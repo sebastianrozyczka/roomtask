@@ -35,7 +35,7 @@ public class Room {
         isAirConditioner = airConditioner;
     }
 
-    private boolean reduceTemperature() {
+    public boolean reduceTemperature() {
         if(temperature > MINIMUM_TEMPERATURE && isAirConditioner) {
             temperature = temperature - coolingForce();
             return true;
@@ -55,7 +55,7 @@ public class Room {
                 + temperature + " stopni celsjusza. Czy zamontowany klimatyzator? " + isAirConditioner;
     }
 
-    public String showInfoAboutCoolingStatus() {
+    public String tryToReduceTemperatureAndReturnStatus() {
         return "Próba obniżenia temperatury powietrza. Czy udana? " + reduceTemperature();
     }
 }
